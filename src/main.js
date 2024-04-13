@@ -1,4 +1,4 @@
-import {render, RenderPosition} from './render.js';
+import { render, RenderPosition } from './render.js';
 
 import BoardPresenter from './presenter/board-presenter.js';
 import TripInfoView from './view/trip-info-view.js';
@@ -12,7 +12,7 @@ const mainElement = bodyElement.querySelector('.page-main');
 const eventListElement = mainElement.querySelector('.trip-events');
 
 const boardPresenter = new BoardPresenter({
-    container: eventListElement
+  container: eventListElement
 });
 
 render(new TripInfoView(), tripInfoElement, RenderPosition.AFTERBEGIN);

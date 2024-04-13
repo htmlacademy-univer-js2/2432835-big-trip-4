@@ -1,20 +1,20 @@
-import {createElement} from '../render.js';
-import {createSortTemplate} from '../template/sort-template.js';
+import { createElement } from '../render.js';
+import { createSortTemplate } from '../template/sort-template.js';
 
 export default class SortView {
-    getTemplate() {
-        return createSortTemplate();
+  getTemplate() {
+    return createSortTemplate();
+  }
+
+  getElement() {
+    if (!this.element) {
+      this.element = createElement(this.getTemplate());
     }
 
-    getElement() {
-        if (!this.element) {
-            this.element = createElement(this.getTemplate());
-        }
+    return this.element;
+  }
 
-        return this.element;
-    }
-
-    removeElement() {
-        this.element = null;
-    }
+  removeElement() {
+    this.element = null;
+  }
 }

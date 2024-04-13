@@ -1,20 +1,20 @@
-import {createElement} from '../render.js';
-import {createTripInfoTemplate} from '../template/trip-info-template.js';
+import { createElement } from '../render.js';
+import { createTripInfoTemplate } from '../template/trip-info-template.js';
 
 export default class TripInfoView {
-    getTemplate() {
-        return createTripInfoTemplate();
+  getTemplate() {
+    return createTripInfoTemplate();
+  }
+
+  getElement() {
+    if (!this.element) {
+      this.element = createElement(this.getTemplate());
     }
 
-    getElement() {
-        if (!this.element) {
-            this.element = createElement(this.getTemplate());
-        }
+    return this.element;
+  }
 
-        return this.element;
-    }
-
-    removeElement() {
-        this.element = null;
-    }
+  removeElement() {
+    this.element = null;
+  }
 }

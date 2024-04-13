@@ -1,20 +1,20 @@
-import {createElement} from '../render.js';
-import {createPointEditTemplate} from '../template/point-edit-template.js';
+import { createElement } from '../render.js';
+import { createPointEditTemplate } from '../template/point-edit-template.js';
 
 export default class PointEditView {
-    getTemplate() {
-        return createPointEditTemplate();
+  getTemplate() {
+    return createPointEditTemplate();
+  }
+
+  getElement() {
+    if (!this.element) {
+      this.element = createElement(this.getTemplate());
     }
 
-    getElement() {
-        if (!this.element) {
-            this.element = createElement(this.getTemplate());
-        }
+    return this.element;
+  }
 
-        return this.element;
-    }
-
-    removeElement() {
-        this.element = null;
-    }
+  removeElement() {
+    this.element = null;
+  }
 }
