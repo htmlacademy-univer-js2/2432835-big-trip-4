@@ -1,9 +1,13 @@
 import { createElement } from '../render.js';
-import { createPointEditTemplate } from '../template/point-edit-template.js';
+import { createPointEditTemplate, BLANK_POINT } from '../template/point-edit-template.js';
 
 export default class PointEditView {
+  constructor(point = BLANK_POINT) {
+    this.point = point;
+  }
+
   getTemplate() {
-    return createPointEditTemplate();
+    return createPointEditTemplate(this.point);
   }
 
   getElement() {
